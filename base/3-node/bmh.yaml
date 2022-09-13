@@ -1,0 +1,71 @@
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: super1
+  namespace: namespace
+  labels:
+    infraenvs.agent-install.openshift.io: "infraenv-blazer-cars-lab"
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "super1"
+    bmac.agent-install.openshift.io/role: master
+    bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "7"
+spec:
+  online: true
+  bootMACAddress: FF:FF:FF:FF:FF:FF
+  automatedCleaningMode: disabled
+  bmc:
+    address: redfish-virtualmedia+http://address:8082/redfish/v1/Systems/ca1a85d9-4bc2-5e86-af84-c39aac30c0e5
+    credentialsName: super-secret-name
+    disableCertificateVerification: True
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: super2
+  namespace: namespace
+  labels:
+    infraenvs.agent-install.openshift.io: "infraenv-blazer-cars-lab"
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "super2"
+    bmac.agent-install.openshift.io/role: master
+    bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "7"
+spec:
+  online: true
+  bootMACAddress: FF:FF:FF:FF:FF:FF
+  automatedCleaningMode: disabled
+  bmc:
+    address: redfish-virtualmedia+http://address:8082/redfish/v1/Systems/8273cc27-82c1-54dc-9eab-a75ea53f1ebf
+    credentialsName: super-secret-name
+    disableCertificateVerification: True
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: super3
+  namespace: namespace
+  labels:
+    infraenvs.agent-install.openshift.io: "infraenv-blazer-cars-lab"
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "super3"
+    bmac.agent-install.openshift.io/role: master
+    bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "7"
+spec:
+  online: true
+  bootMACAddress: FF:FF:FF:FF:FF:FF
+  automatedCleaningMode: disabled
+  bmc:
+    address: redfish-virtualmedia+http://address:8082/redfish/v1/Systems/03798b5b-994b-5088-89f3-30f7c6fb35e2
+    credentialsName: super-secret-name
+    disableCertificateVerification: True
