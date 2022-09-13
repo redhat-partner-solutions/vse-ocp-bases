@@ -1,0 +1,1 @@
+# vse-ocp-bases
