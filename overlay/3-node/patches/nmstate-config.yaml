@@ -13,21 +13,21 @@ spec:
         state: up
         ipv4:
           address:
-          - ip: 10.50.56.121
-            prefix-length: 24
+            - ip: 10.50.56.121
+              prefix-length: 24
           enabled: true
         ipv6:
           enabled: true
           address:
-          - ip: fd00:6:6:2056::121
-            prefix-length: 64
+            - ip: fd00:6:6:2056::121
+              prefix-length: 64
           autoconf: false
           dhcp: false
     dns-resolver:
       config:
         server:
-        - 10.40.0.100
-        - fd00:6:6:11::52
+          - 10.40.0.100
+          - fd00:6:6:11::52
     routes:
       config:
         - destination: 0.0.0.0/0
@@ -54,21 +54,21 @@ spec:
         state: up
         ipv4:
           address:
-          - ip: 10.50.56.122
-            prefix-length: 24
+            - ip: 10.50.56.122
+              prefix-length: 24
           enabled: true
         ipv6:
           enabled: true
           address:
-          - ip: fd00:6:6:2056::122
-            prefix-length: 64
+            - ip: fd00:6:6:2056::122
+              prefix-length: 64
           autoconf: false
           dhcp: false
     dns-resolver:
       config:
         server:
-        - 10.40.0.100
-        - fd00:6:6:11::52
+          - 10.40.0.100
+          - fd00:6:6:11::52
     routes:
       config:
         - destination: 0.0.0.0/0
@@ -95,21 +95,21 @@ spec:
         state: up
         ipv4:
           address:
-          - ip: 10.50.56.123
-            prefix-length: 24
+            - ip: 10.50.56.123
+              prefix-length: 24
           enabled: true
         ipv6:
           enabled: true
           address:
-          - ip: fd00:6:6:2056::123
-            prefix-length: 64
+            - ip: fd00:6:6:2056::123
+              prefix-length: 64
           autoconf: false
           dhcp: false
     dns-resolver:
       config:
         server:
-        - 10.40.0.100
-        - fd00:6:6:11::52
+          - 10.40.0.100
+          - fd00:6:6:11::52
     routes:
       config:
         - destination: 0.0.0.0/0

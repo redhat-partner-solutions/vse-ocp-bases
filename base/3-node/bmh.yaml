@@ -18,6 +18,7 @@ spec:
   bootMACAddress: FF:FF:FF:FF:FF:FF
   automatedCleaningMode: disabled
   bmc:
+    # yamllint disable-line rule:line-length
     address: redfish-virtualmedia+http://address:8082/redfish/v1/Systems/ca1a85d9-4bc2-5e86-af84-c39aac30c0e5
     credentialsName: super-secret-name
     disableCertificateVerification: True
@@ -41,6 +42,7 @@ spec:
   bootMACAddress: FF:FF:FF:FF:FF:FF
   automatedCleaningMode: disabled
   bmc:
+    # yamllint disable-line rule:line-length
     address: redfish-virtualmedia+http://address:8082/redfish/v1/Systems/8273cc27-82c1-54dc-9eab-a75ea53f1ebf
     credentialsName: super-secret-name
     disableCertificateVerification: True
@@ -64,6 +66,7 @@ spec:
   bootMACAddress: FF:FF:FF:FF:FF:FF
   automatedCleaningMode: disabled
   bmc:
+    # yamllint disable-line rule:line-length
     address: redfish-virtualmedia+http://address:8082/redfish/v1/Systems/03798b5b-994b-5088-89f3-30f7c6fb35e2
     credentialsName: super-secret-name
     disableCertificateVerification: True
