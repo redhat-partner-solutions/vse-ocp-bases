@@ -35,7 +35,6 @@ metadata:
     bmac.agent-install.openshift.io/role: master
     bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "7"
 spec:
   online: true
@@ -58,7 +57,6 @@ metadata:
     bmac.agent-install.openshift.io/hostname: "super3"
     bmac.agent-install.openshift.io/role: master
     bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "7"
 spec:
