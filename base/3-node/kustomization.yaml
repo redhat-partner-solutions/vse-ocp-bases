@@ -9,6 +9,6 @@ resources:
 - infraenv.yaml
 - klusterletaddon.yaml
 - managedcluster.yaml
-- bmc-secrets-sealed.yaml
+- bmc-secrets.yaml
 - bmh.yaml
 - nmstate-config.yaml
