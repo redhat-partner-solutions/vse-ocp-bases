@@ -11,8 +11,8 @@ spec:
     dns-resolver:
       config:
         server:
-        - 10.40.0.100
-        - fd00:6:6:11::52
+          - 10.40.0.100
+          - fd00:6:6:11::52
 ---
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
@@ -26,8 +26,8 @@ spec:
     dns-resolver:
       config:
         server:
-        - 10.40.0.100
-        - fd00:6:6:11::52
+          - 10.40.0.100
+          - fd00:6:6:11::52
 ---
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
@@ -41,5 +41,5 @@ spec:
     dns-resolver:
       config:
         server:
-        - 10.40.0.100
-        - fd00:6:6:11::52
+          - 10.40.0.100
+          - fd00:6:6:11::52

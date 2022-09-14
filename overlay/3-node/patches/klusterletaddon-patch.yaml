@@ -7,4 +7,3 @@
 - op: replace
   path: /metadata/name
   value: blazer-cars-lab
-  

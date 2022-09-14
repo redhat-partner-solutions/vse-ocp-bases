@@ -9,7 +9,7 @@ bases:
   - ../../base/3-node
 
 patchesStrategicMerge:
-- ./patches/nmstate-config.yaml
+  - ./patches/nmstate-config.yaml
 
 patches:
   - target:
