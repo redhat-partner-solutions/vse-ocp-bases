@@ -1,0 +1,26 @@
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: InfraEnv
+metadata:
+  name: infraenv
+  namespace: clustername
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  additionalNTPSources:
+    - 10.18.100.10
+  clusterRef:
+    name: clustername
+    namespace: clustername
+# yamllint disable-line rule:line-length
+  sshAuthorizedKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCkqvtsAe9WYEDCe7n4fcls+SHZu8pXC7huV50B506RXT3o4ttZNk/pBsVjTZzQ9HZhtbSh3N5yRa9e+YxWu13eQw6d6xSzOJSjTPPBgWJ5QXwnl7nvB999pYPlbxlRaZwSSvKzO41+U7ecpDVXWuyO8QiEDC2ommYYVe25B71KMO/1vkMRoSSdtu30gY3yqDRtH//nTBrIKta68JOzkemQIZGIiMjA87RCgFU36KbjGuh/FcxFd2hg3YFLbPsgkHAbJGMeZnnFX9dpP0ORtqb/mr1Ai4yd4JSM6IRZlcAbC43nP25aHqfy+Zjmh6Wqq2ZI5szaL20hJomUE4x9xvV4y+CZQOBhcs2Xzpzzd8iUovTUeT/7xdRoDDxki+6ylMv+KwJNYhEAqWWsx7r4JXFvbgMRW0shLruYQZhLq5SZTdL9XZJzzUl1UKlNTPI0GP5A2ugUzuT2Edi/CspRjuYmgQ7R5qBqPIyTVlIU+5U4xRg81XDB/52LLLGRpknlxDPFPL2l1whOoT0tUQkY3RLqDxyTudA886CJbvt+v2YFQ1NJRuEI1dVKfRPANWdXiGBcyvgjeBZWp/wUTitA4b28iztF66G1k/33EYA/7e6jP+n6k1y9gsfNwIzM1vzM9726GECW0JdnksTUZIzFMk54SE1P8isX65y14yW+IXAqQ=='
+  agentLabelSelector:
+    matchLabels:
+      cluster-name: cluster-name
+  pullSecretRef:
+    name: assisted-deployment-pull-secret
+  nmStateConfigLabelSelector:
+    matchLabels:
+      cluster-name: cluster-nmstate
+---
