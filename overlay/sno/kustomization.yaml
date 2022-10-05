@@ -1,0 +1,64 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: rna4
+
+bases:
+  - ../../base/sno
+
+patchesStrategicMerge:
+  - ./patches/nmstate-config.yaml
+
+patches:
+  - target:
+      version: v1
+      kind: Namespace
+    patch: |-
+      - op: replace
+        path: /metadata/labels/name
+        value: 'rna4'
+  - target:
+      kind: AgentClusterInstall
+    patch: |-
+      - op: replace
+        path: /spec/clusterDeploymentRef/name
+        value: 'rna4'
+      - op: replace
+        path: /metadata/name
+        value: 'rna4'
+  - target:
+      kind: SealedSecret
+    patch: |-
+      - op: replace
+        path: /spec/template/metadata/namespace
+        value: 'rna4'
+  - target:
+      kind: Secret
+      name: rna4-bmc-secret
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: 'rna4'
+  - target:
+      kind: ManagedCluster
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: 'rna4'
+      - op: replace
+        path: /metadata/namespace
+        value: 'rna4'
+  - target:
+      kind: BareMetalHost
+      name: metal1
+    path: ./patches/bmh-rna4-patch.yaml
+  - target:
+      kind: ClusterDeployment
+    path: ./patches/clusterdeployment-patch.yaml
+  - target:
+      kind: InfraEnv
+    path: ./patches/infraenv-patch.yaml
+  - target:
+      kind: KlusterletAddonConfig
+    path: ./patches/klusterletaddon-patch.yaml

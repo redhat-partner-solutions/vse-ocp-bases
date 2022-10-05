@@ -1,0 +1,26 @@
+---
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: cluster
+  namespace: clustername
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  baseDomain: cloud.lab.eng.bos.redhat.com
+  clusterName: rna4
+  clusterInstallRef:
+    group: extensions.hive.openshift.io
+    kind: AgentClusterInstall
+    name: clustername
+    version: v1beta1
+  platform:
+    agentBareMetal:
+      agentSelector:
+        matchLabels:
+          cluster-name: clustername
+  pullSecretRef:
+    name: assisted-deployment-pull-secret
+---
+
