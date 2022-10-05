@@ -1,0 +1,27 @@
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: metal1
+  namespace: namespace
+  labels:
+    infraenvs.agent-install.openshift.io: "infraenv-rna4"
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "metal1"
+    bmac.agent-install.openshift.io/role: master
+    bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "7"
+spec:
+  #bootMode: "UEFI"
+  online: true
+  bootMACAddress: B8:59:9F:B1:11:C5
+  automatedCleaningMode: disabled
+  bmc:
+# yamllint disable-line rule:line-length
+    address: redfish-virtualmedia://address:8082/redfish/v1/Systems/System.Embedded.1/
+    credentialsName: secret-name
+    disableCertificateVerification: true
+    rootDeviceHints:
+      deviceName: /dev/nvme0n1

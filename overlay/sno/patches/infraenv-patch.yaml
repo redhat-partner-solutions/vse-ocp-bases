@@ -1,0 +1,25 @@
+- op: replace
+  path: /spec/clusterRef/name
+  value: 'rna4'
+- op: replace
+  path: /spec/baseDomain
+  value: 'cloud.lab.eng.bos.redhat.com'
+- op: replace
+  path: /spec/clusterRef/namespace
+  value: 'rna4'
+- op: replace
+  path: '/spec/nmStateConfigLabelSelector/matchLabels/cluster-name'
+  value: 'rna4-nmstate'
+- op: replace
+  path: '/spec/agentLabelSelector/matchLabels/cluster-name'
+  value: 'rna4'
+- op: replace
+  path: '/spec/pullSecretRef/name'
+  value: 'assisted-deployment-pull-secret'
+- op: replace
+  path: '/spec/sshAuthorizedKey'
+# yamllint disable-line rule:line-length
+  value: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/LXOHJg+kdf3CznyRopI5Woh1JyHGc5uY/ModIt6EIPsDI21e2qTq/OIiGku9w9sQIIcrHRUiPMBhfDBOl6cuAHUP+UJhMj7nLKiFEwsmTtqA/CP0M8viNHVcK8H1GH6sa4KTVdGXTWJ0zCoSrp3rrFXMWeJ+pMPIvWi+IeBM4kX8XJmFvb+feHaOd2f4Kc4Pt8JH0Fa5hMsMGwmgNzuVI462g5kIGmrU9xxf9+4Ws2cyUDgxSOHLA7ufnmBZBXDPFIVKjCVlvVusGczQhctmtRCmIzXp6v3d8DeVYeTn6V0gjHDZ9N4l68v1+Puy2K+WvUDeBHx1Dj3TGSuVlrtjYlFTmSIq0Uebo83+JqdWg8n6pa/I+eWmYFNfH6kY68v+jXYbR/abGEaBzQT2ZRm8TxzKoatss5TgezH4EglisreFcz+Hw74Sk7fFfAiZcIWH7rrFwU6SeYbPzGRvLSBtc/ONao6SedOMOJ+Y1MYUFq/jGHHErV6hCH7yGX/X5BTzeYuiS7MXIXuG1YjEKa+gd7xxJTvk//iPRJuPxzQU3S62crQwSZ9p/TLTT+QgcCitpexls92FcxVzQJnPfJ+Bnoq9M2pXPbrPuWLAM1QUExCnQhvDuy/FFtQbtL+KH8FySWOjgJF+LZ1qMg8vLhbcOVGZTyYnPXjUTGBFXaQHVw=='
+- op: replace
+  path: /metadata/name
+  value: infraenv-rna4
