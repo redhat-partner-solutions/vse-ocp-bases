@@ -17,11 +17,11 @@ spec:
   #bootMode: "UEFI"
   online: true
   bootMACAddress: B8:59:9F:B1:11:C5
-  automatedCleaningMode: disabled 
+  automatedCleaningMode: disabled
   bmc:
     address: redfish-virtualmedia://address:8082/redfish/v1/Systems/System.Embedded.1/
     credentialsName: secret-name
-    disableCertificateVerification: True
+    disableCertificateVerification: true
     rootDeviceHints:
       deviceName: /dev/nvme0n1
 ---

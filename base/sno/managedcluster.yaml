@@ -5,7 +5,7 @@ metadata:
   name: cluster
   namespace: clustername
   labels:
-    local-argo: True
+    local-argo: "true"
     cluster.open-cluster-management.io/clusterset: all-openshift-clusters
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
