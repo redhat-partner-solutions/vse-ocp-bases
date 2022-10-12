@@ -6,10 +6,10 @@
   value: 'rna4'
 - op: replace
   path: '/spec/nmStateConfigLabelSelector/matchLabels/cluster-name'
-  value: 'rna4'
+  value: 'rna4-nmstate'
 - op: replace
   path: '/spec/agentLabelSelector/matchLabels/cluster-name'
-  value: 'rna4-nmstate'  
+  value: 'rna4'  
 - op: replace
   path: '/spec/pullSecretRef/name'
   value: 'assisted-deployment-pull-secret'
