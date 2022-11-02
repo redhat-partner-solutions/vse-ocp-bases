@@ -1,0 +1,23 @@
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: bmh-day2-worker1
+  namespace: patch-me
+  labels:
+    infraenvs.agent-install.openshift.io: "infraenv"
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "hostname-worker"
+    bmac.agent-install.openshift.io/role: "worker"
+    bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  online: true
+  bootMACAddress: ff:ff:ff:ff:ff:ff
+  automatedCleaningMode: disabled
+  bmc:
+    address: redfish-virtualmedia://ipaddress/redfish/v1/Systems/1/
+    credentialsName: bmc-secret-day2-worker1
+    disableCertificateVerification: false
