@@ -4,7 +4,7 @@ kind: Kustomization
 
 namespace: rna4
 
-bases:
+resources:
   - ../../base/sno
 
 patchesStrategicMerge:
