@@ -5,5 +5,4 @@ kind: Kustomization
 resources:
   - bmc-secrets.yaml
   - bmh.yaml
-  - provisioning.yaml
   - nmstate-config.yaml

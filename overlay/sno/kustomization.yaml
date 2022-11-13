@@ -25,12 +25,6 @@ patches:
         path: /spec/template/metadata/namespace
         value: 'rna4'
   - target:
-      kind: Provisioning
-    patch: |-
-      - op: replace
-        path: /spec/disableVirtualMediaTLS
-        value: false
-  - target:
       kind: Secret
       name: rna4-bmc-secret
     patch: |-

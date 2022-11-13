@@ -13,4 +13,3 @@ resources:
   - bmc-secrets.yaml
   - bmh.yaml
   - nmstate-config.yaml
-  - provisioningoverride.yaml
