@@ -5,7 +5,6 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - pullsecret-sealed.yaml
-  - provisioning.yaml
   - aci.yaml
   - clusterdeployment.yaml
   - infraenv.yaml

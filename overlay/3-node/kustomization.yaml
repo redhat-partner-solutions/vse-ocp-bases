@@ -80,10 +80,3 @@ patches:
   - target:
       kind: KlusterletAddonConfig
     path: ./patches/klusterletaddon-patch.yaml
-  - target:
-      kind: Provisioning
-      name: provisioning-configuration
-    patch: |-
-      - op: replace
-        path: /spec/disableVirtualMediaTLS
-        value: true
