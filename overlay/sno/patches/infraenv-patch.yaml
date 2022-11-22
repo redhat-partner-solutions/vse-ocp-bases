@@ -4,6 +4,10 @@
 - op: replace
   path: /spec/baseDomain
   value: 'cloud.lab.eng.bos.redhat.com'
+# IPv4/IPv6 NTP
+- op: replace
+  path: /spec/additionalNTPSources
+  value: ['10.18.100.10', 'fd00:6:6:11::52']
 - op: replace
   path: /spec/clusterRef/namespace
   value: 'rna4'

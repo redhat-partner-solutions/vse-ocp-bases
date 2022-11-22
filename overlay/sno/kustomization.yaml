@@ -9,6 +9,7 @@ resources:
 
 patchesStrategicMerge:
   - ./patches/nmstate-config.yaml
+  - ./patches/aci.yaml
 
 patches:
   - target:
@@ -32,6 +33,15 @@ patches:
         path: /metadata/name
         value: 'rna4-bmc-secret'
   - target:
+      kind: AgentClusterInstall
+    patch: |-
+      - op: replace
+        path: /spec/clusterDeploymentRef/name
+        value: 'rna4'
+      - op: replace
+        path: /metadata/name
+        value: 'rna4'
+  - target:
       kind: ManagedCluster
     patch: |-
       - op: replace
@@ -53,6 +63,3 @@ patches:
   - target:
       kind: KlusterletAddonConfig
     path: ./patches/klusterletaddon-patch.yaml
-  - target:
-      kind: AgentClusterInstall
-    path: ./patches/aci.yaml
