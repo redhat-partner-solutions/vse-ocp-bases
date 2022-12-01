@@ -1,10 +1,26 @@
-- op: replace
-  path: /spec/clusterDeploymentRef/name
-  value: 'rna4'
-- op: replace
-  path: /metadata/name
-  value: 'rna4'
-- op: replace
-  path: /spec/sshPublicKey
-# yamllint disable-line rule:line-length
-  value: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqKXhabF5eesISHsAS/7BSQFKuXgQRgV2Q7zU0u1/8lJF3hsNKcdCehb41nUrIGT00yIWlCl+5vkihR8CwST0iotT/aig6jVXCQ1I67v1GXQ+qZDF7yhoHDu8m2ctIm9NATG39y6lMQgvw5gjDlrKIwTdvEOH+OYmAiheV262cb9xJ1BhBm6Mp4c5Ra6VMYjmXrWH3ADo0w8PkO8VgbsxyVBSUbJpsqbqv3YmFYUqqjjUtrlGb7iXutV779rRBWqH4MfHX2Y4KmRmPb1teIWVuS7FlrcHvrfVZwafvypfUS5Avrj6rolUCCFKm+47McLZ4HVAEkTc6GonU0pb19I7WZWHuwyb61NIMlRU1tZcwhrVH5SAhim19ylxMt4vpdJp0B5/EywSfgrzsCKOTir+9lgWsanS+MZbHAWrV9WqCIslbUFE7s72d6fzt2hYQM9JxFrBwnL91y0q8f1SZV1e4pm6oqQq1gkB3ndn2MrxFMBQKmqy65E7XLZu6PJiuIgM= core@metal3'
+---
+apiVersion: extensions.hive.openshift.io/v1beta1
+kind: AgentClusterInstall
+metadata:
+  name: cluster
+  namespace: cluster-name
+spec:
+  clusterDeploymentRef:
+    name: rna4
+  imageSetRef:
+    name: openshift-v4.10.16
+  # dual stack network config
+  networking:
+    clusterNetwork:
+      - cidr: 10.128.0.0/14
+        hostPrefix: 23
+      - cidr: fd01::/48
+        hostPrefix: 64
+    serviceNetwork:
+      - 172.30.0.0/16
+      - fd02::/112
+    machineNetwork:
+      - cidr: 172.17.0.0/24
+      - cidr: fd00:6:6:2060::0/64
+  # yamllint disable-line rule:line-length
+  sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDzcf7gr7S7jVWKJr1/NsLvTBR/JNmqpWwygq/v4rP+QObIZME5EmYNYw4jwGk/anDxFff3XcPVKYjNarv7xULn3F+yOmZxZbmFrXTZC+iWArGD56W79CTaCxPsZies32/BitoLZwqPZf6lsBKaMB0LOdlrKfZFP7x6e/PR9or+1+1PWHfP3QJmJNfLjMzFxrUM/UBkMR8knL8dFsAkvOTfdRm/X56enMlmqzqN5kWhSYwhj7YCwssUNMF+qWVYaggKyRbxFcSv3ytit4Ygw4HRPfSNiyBHxFv2EmSmXCiawv1JidHVIrfFjqHRh/dtBlMAF3Bwd7pYoQ8ELvpIoRXZ02pFab1pmNO/KXFn7F8RW2wZYmTa+YLrXPQrC087R50Mto/cWhwaRuXqtnAgMfO78hxo8lwqbDwfcbSOr8D9mYM5FVJ+cH4LDDwFzuICFh3kp82ALF44ZzOpcsXVY4P4wPzXqda4lQjwx4sN6/ZDZcFnrad48+PXp/wEWTMfPbM= core@metal3'
