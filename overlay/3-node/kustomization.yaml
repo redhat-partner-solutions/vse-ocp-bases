@@ -60,6 +60,15 @@ patches:
         path: /metadata/name
         value: 'volante-cars-lab'
   - target:
+      kind: ManagedClusterInfo
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: 'volante-cars-lab'
+      - op: replace
+        path: /metadata/namespace
+        value: 'volante-cars-lab'
+  - target:
       kind: BareMetalHost
       name: super1
     path: ./patches/bmh-volante-cars-lab-super1-patch.yaml

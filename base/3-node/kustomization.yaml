@@ -13,3 +13,4 @@ resources:
   - bmc-secrets.yaml
   - bmh.yaml
   - nmstate-config.yaml
+  - managed-cluster-info.yaml
