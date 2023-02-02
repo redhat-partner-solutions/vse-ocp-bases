@@ -23,5 +23,5 @@ spec:
     address: redfish-virtualmedia://address:8082/redfish/v1/Systems/System.Embedded.1/
     credentialsName: secret-name
     disableCertificateVerification: true
-    rootDeviceHints:
-      deviceName: /dev/nvme0n1
+  rootDeviceHints:
+    deviceName: /dev/nvme0n1
