@@ -63,3 +63,12 @@ patches:
   - target:
       kind: KlusterletAddonConfig
     path: ./patches/klusterletaddon-patch.yaml
+  - target:
+      kind: ManagedClusterInfo
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: 'rna4'
+      - op: replace
+        path: /metadata/namespace
+        value: 'rna4'

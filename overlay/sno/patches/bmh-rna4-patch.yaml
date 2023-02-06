@@ -17,3 +17,6 @@
 - op: replace
   path: /metadata/name
   value: metal1
+- op: replace
+  path: /spec/rootDeviceHints/deviceName
+  value: /dev/nvme0n1
