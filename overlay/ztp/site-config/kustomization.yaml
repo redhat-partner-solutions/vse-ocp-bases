@@ -1,0 +1,47 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+generators:
+ #- SiteConfig-example-sno.yaml
+
+
+resources:
+  - ../../../base/ztp/site-config
+
+patches:
+  - target:
+      kind: Secret
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: 'xxxx'
+      - op: replace
+        path: /metadata/namespace
+        value: 'xxxx'
+      - op: replace
+        path: /data/username
+        value: 'xxxx'
+      - op: replace
+        path: /data/password
+        value: 'xxxx'
+  - target:
+      kind: SealedSecret
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: 'assisted-deployment-pull-secret'
+      - op: replace
+        path: /metadata/namespace
+        value: 'xxxx'
+      - op: replace
+        path: /spec/encryptedData/.dockerconfigjson
+        value: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+      - op: replace
+        path: /spec/encryptedData/type
+      - op: replace
+        path: /spec/template/metadata/name
+        value: 'xxxx-bmc-creds-secret'
+      - op: replace
+        path: /spec/template/metadata/namespace
+        value: 'xxxx'

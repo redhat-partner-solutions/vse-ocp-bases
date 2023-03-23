@@ -1,0 +1,68 @@
+---
+apiVersion: ran.openshift.io/v1
+kind: SiteConfig
+metadata:
+  name: "xxx"
+  namespace: "xxx"
+spec:
+  baseDomain: "xxxx"
+  pullSecretRef:
+    name: "assisted-deployment-pull-secret"
+  clusterImageSetNameRef: "img4.9.37-x86-64-appsub"
+# yamllint disable-line rule:line-length
+  sshPublicKey: "xxxxx"
+  clusters:
+    - clusterName: "xxxx"
+      clusterLabels:
+        group-vdu: ""
+        common-49: true
+        sites: "r740xls"
+      networkType: "OVNKubernetes"
+      clusterNetwork:
+        - cidr: "10.128.0.0/14"
+          hostPrefix: 23
+      serviceNetwork:
+        - "172.30.0.0/16"
+      machineNetwork:
+        - cidr: "10.60.0.0/24"
+      additionalNTPSources:
+        - 10.40.0.100
+      nodes:
+        - hostName: "xxxx"
+          role: master
+# yamllint disable-line rule:line-length
+          bmcAddress: "idrac-virtualmedia://x.x.x.x/redfish/v1/Systems/System.Embedded.1"
+          bmcCredentialsName:
+            name: "xxxx-bmc-creds-secret"
+          bootMACAddress: "40:A6:B7:3D:B3:70"
+          bootMode: "UEFI"
+          cpuset: "0-3,48-51"
+          nodeNetwork:
+            config:
+              interfaces:
+                - name: enp1s0
+                  type: ethernet
+                  state: up
+                  ipv4:
+                    enabled: true
+                    address:
+                      - ip: 10.60.0.60
+                        prefix-length: 24
+                  ipv6:
+                    enabled: false
+              dns-resolver:
+                config:
+                  search:
+                    - cars.lab
+                  server:
+                    - 10.40.0.100
+              routes:
+                config:
+                  - destination: 0.0.0.0/0
+                    next-hop-interface: enp1s0
+                    next-hop-address: 10.60.0.1
+                    table-id: 254
+            interfaces:
+              - name: "enp1s0"
+                macAddress: "40:A6:B7:3D:B3:70"
+---
