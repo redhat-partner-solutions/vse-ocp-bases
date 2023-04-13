@@ -1,8 +1,7 @@
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
 metadata:
-  name: rna4-nmstate
-  namespace: rna4
+  name: nmstate-sno-host
   labels:
     cluster-name: rna4-nmstate
 spec:

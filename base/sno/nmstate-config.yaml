@@ -2,10 +2,7 @@
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
 metadata:
-  name: rna4-nmstate
-  namespace: rna4
-  labels:
-    cluster-name: rna4-nmstate
+  name: nmstate-sno-host
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "6"
